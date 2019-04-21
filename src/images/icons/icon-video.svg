@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="15px" viewBox="0 0 20 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Bits/Icons/Icon-video-streaming</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M7.51979242,3.24740145 L13.2041043,5.69853013 L7.51979242,8.14965881 L7.51979242,3.24740145 Z M8.35312575,6.93889702 L11.2296097,5.69853013 L8.35312575,4.45816324 L8.35312575,6.93889702 Z M6.03946456,12.8809161 L6.03946456,12.1090411 L19.1666667,12.1090411 L19.1666667,12.8809161 L6.03946456,12.8809161 Z M6.03946456,12.1090411 L19.1666667,12.1090411 L19.1666667,12.8809161 L6.03946456,12.8809161 L6.03946456,12.1090411 Z M0.833333333,12.8809161 L0.833333333,12.1090411 L4.14247004,12.1090411 L4.14247004,12.8809161 L0.833333333,12.8809161 Z M0.833333333,12.1090411 L4.14247004,12.1090411 L4.14247004,12.8809161 L0.833333333,12.8809161 L0.833333333,12.1090411 Z M5.09116186,11.2833653 C5.8394202,11.2833653 6.45613123,11.8204122 6.45613123,12.4949786 C6.45613123,13.1695324 5.83944537,13.7062532 5.09116186,13.7062532 C4.34257389,13.7062532 3.72580337,13.1696109 3.72580337,12.4949786 C3.72580337,11.8203338 4.3425991,11.2833653 5.09116186,11.2833653 Z M5.09116186,12.0552403 C4.79168502,12.0552403 4.5591367,12.2576916 4.5591367,12.4949786 C4.5591367,12.7321488 4.79156181,12.9343782 5.09116186,12.9343782 C5.39040846,12.9343782 5.62279789,12.7321225 5.62279789,12.4949786 C5.62279789,12.2577179 5.39028525,12.0552403 5.09116186,12.0552403 Z M0.416666667,11.0114614 L0.416666667,0.00510253906 L19.5833333,0.00510253906 L19.5833333,11.0114614 L0.416666667,11.0114614 Z M1.25,10.0378198 L18.75,10.0378198 L18.75,0.978744161 L1.25,0.978744161 L1.25,10.0378198 Z" id="path-1"></path>
+    </defs>
+    <g id="Bruner-Dynamics-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-315.000000, -782.000000)">
+        <g id="Components/desktop/package-cards/unlimited-basic" transform="translate(0.000000, 443.000000)">
+            <g id="Packages-Full-Data">
+                <g id="CONTENT" transform="translate(285.000000, 79.953544)">
+                    <g id="SILVER-25" transform="translate(0.000000, 65.905516)">
+                        <g id="VIDEO-STREAMING" transform="translate(30.000000, 186.390604)">
+                            <g id="Bits/Icons/Icon-video-streaming" transform="translate(0.000000, 3.846980)">
+                                <g id="Icon-_Placeholder">
+                                    <polygon id="Bounds" points="0 0 20 0 20 19 0 19"></polygon>
+                                    <g id="IconColor" transform="translate(0.000000, 3.800000)">
+                                        <mask id="mask-2" fill="white">
+                                            <use xlink:href="#path-1"></use>
+                                        </mask>
+                                        <use id="Mask" fill="#013064" fill-rule="nonzero" xlink:href="#path-1"></use>
+                                        <g id="Bits/Colors/Charcoal" mask="url(#mask-2)" fill="#202E39">
+                                            <g transform="translate(0.000000, -3.265625)" id="Rectangle">
+                                                <rect x="0" y="0" width="20" height="19"></rect>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
