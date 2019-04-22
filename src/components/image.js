@@ -14,13 +14,13 @@ import Img from "gatsby-image"
  */
 
 const Image = ({src, data}) => {
-  console.log(src, data.allFile.edges)
-  data.allFile.edges.find((item) => {
-    console.log(item)
+  let imageSrc = data.allFile.edges.find(({node}) => {
+    if (node.childImageSharp) {
+      return src ===  node.childImageSharp.fluid.originalName
+    }
   })
-
     return (
-      <div>poop</div>
+      <Img fluid={imageSrc.node.childImageSharp.fluid}/>
     )
   }
 
@@ -33,7 +33,7 @@ const Image = ({src, data}) => {
         edges {
           node {
             childImageSharp {
-              fluid(maxWidth: 200, maxHeight: 200) {
+              fluid(maxWidth: 600) {
                 ...GatsbyImageSharpFluid
                 originalName
               }

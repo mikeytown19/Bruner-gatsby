@@ -192,7 +192,7 @@ const IndexPage = () => (
 
 
     <ContainerWrapper largePadding>
-        <SideBySide imgSrc='satellite.png'>
+        <SideBySide imgSrc='satellite.png' reverse>
           <h2>We’re Here to Brand Everything, Everywhere, Anytime</h2>
           <p>Flat screen tv? Wireless divice? Tablet? Laptop? We can put our brand image on all of them. We can do it whenever we want, but mostly you’ll see our logo on your screen when you’re experiencing technical difficulties. This way, you will associate  our brand with some of your most emotional moments. </p>
         </SideBySide>
