@@ -15,6 +15,8 @@ import Satellite from '../images/satellite.png'
 const FlexWrap = styled.div`
     display: flex;
     flex-wrap: wrap;
+    justify-content: ${props =>
+    props.spaceAround ? 'space-around' : 'initial'};
 `
 
 const LegalStyleContainer = styled.div`
@@ -33,6 +35,10 @@ const ContainerWrapper = styled.div`
   padding: 1.45rem 1.0875rem;
   padding: ${props =>
   props.largePadding ? '80px 0' : '1.45rem 1.0875rem'};
+  text-align:  ${props =>
+    props.textCenter ? 'center' : 'initial'};
+  max-width: ${props =>
+  props.maxWidth ? props.maxWidth + 'px' : 'intital'};
 `
 
 const H1 = styled.h1`
@@ -43,7 +49,7 @@ const H1 = styled.h1`
 
 const H3 = styled.h3`
   font-size: 32px;
-  font-weight: 200;
+  font-weight: 100;
   line-height: 30px;
   margin: 0;
 `
@@ -129,6 +135,33 @@ const Banner = styled.div`
   }
 `
 
+const CardContainer = styled.div`
+  max-width: 350px;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 10px;
+
+  h3 {
+    background-color: ${Colors.primary};
+    margin-top: 0;
+    padding: 15px;
+    color: white;
+    border-radius: 5px 5px 0 0;
+  }
+
+  p {
+    padding: 5px 15px 15px;
+  }
+`
+
+const Card = ({children}) =>  (
+    <CardContainer>
+      {children}
+    </CardContainer>
+)
+
+
+
 
 const IndexPage = () => (
   <Layout>
@@ -196,6 +229,33 @@ const IndexPage = () => (
           <h2>We’re Here to Brand Everything, Everywhere, Anytime</h2>
           <p>Flat screen tv? Wireless divice? Tablet? Laptop? We can put our brand image on all of them. We can do it whenever we want, but mostly you’ll see our logo on your screen when you’re experiencing technical difficulties. This way, you will associate  our brand with some of your most emotional moments. </p>
         </SideBySide>
+      </ContainerWrapper>
+
+      <BackgroundColor bgColor={Colors.white3}>
+        <ContainerWrapper textCenter maxWidth="750">
+          <h2>Equipment</h2>
+          <p css={css`max-width: 550px; margin: auto; margin-bottom: 30px;`}>When you sign up for Brüner Dynamics, we make it easy to get connected. We’ll send a professional technician named Ralph to install your new dish in an optimal location and set up your wifi router inside your home. </p>
+          <FlexWrap spaceAround>
+            <Card>
+              <H3>Brüner Satellite Dish</H3>
+              <p>To access Brüner you’ll need a Brüner Satellite Dish. Jimmy’s cousin Ralph will test for the best installation location and install the dish on your abode. He’ll probably stay for dinner.</p>
+
+            </Card>
+            <Card>
+              <H3>Brüner Wi-Fi Modem</H3>
+              <p>The Brüner WiFi Modem gives you wireless internet throughout your home. It also includes a Voice service adapter so we can listen and see if anything cool is happening at your place. </p>
+            </Card>
+          </FlexWrap>
+
+        </ContainerWrapper>
+      </BackgroundColor>
+
+
+      <ContainerWrapper textCenter maxWidth="750">
+      <h2>Brüner Dynamics FAQs</h2>
+
+
+
       </ContainerWrapper>
 
 

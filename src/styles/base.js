@@ -6,7 +6,7 @@ import { Global, css } from '@emotion/core'
 const BaseStyles = () => (
   <Global
   styles={css`
-@import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700|Source+Sans+Pro:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:100,200,400,500,700|Source+Sans+Pro:300,400,700');
   html, body {
     margin: 0px;
     padding: 0;
