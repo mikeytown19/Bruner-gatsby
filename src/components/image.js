@@ -34,7 +34,7 @@ const Image = ({src, data}) => {
         edges {
           node {
             childImageSharp {
-              fluid(maxWidth: 600) {
+              fluid(maxWidth: 400) {
                 ...GatsbyImageSharpFluid
                 originalName
               }

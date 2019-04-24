@@ -11,6 +11,7 @@ import SideBySide from '../components/sidebyside'
 import Colors from '../styles/colors'
 import Wave from '../components/wave'
 import Accordions from '../components/accordion'
+import Footer from '../components/footer'
 
 
 const FlexWrap = styled.div`
@@ -48,18 +49,22 @@ const ContainerWrapper = styled.div`
   text-align:  ${props =>
     props.textCenter ? 'center' : 'initial'};
   max-width: ${props =>
-  props.maxWidth ? props.maxWidth + 'px' : 'intital'};
+  props.maxWidth ? props.maxWidth  : 'intital'};
 `
 
 const H1 = styled.h1`
   font-weight: 500;
 `
 
+
+const H2 = styled.h2`
+  font-weight: 300;
+`
 const H3 = styled.h3`
   font-weight: 300;
 `
 
-const H2 = styled.h2`
+const H4 = styled.h4`
   font-weight: 300;
 `
 
@@ -129,9 +134,6 @@ const Banner = styled.div`
   color: ${Colors.white};
   position: relative;
 
-
-
-
   &:before {
     top: -13px;
     left: 50%;
@@ -149,17 +151,19 @@ const CardContainer = styled.div`
   background-color: white;
   border-radius: 5px;
   margin-top: 10px;
+  box-shadow: 0px 0px 8px -2px grey;
 
-  h3 {
+  h4 {
     background-color: ${Colors.primary};
-    margin-top: 0;
+    margin: 0;
     padding: 15px;
     color: white;
     border-radius: 5px 5px 0 0;
+
   }
 
   p {
-    padding: 5px 15px 15px;
+    padding: 20px;
   }
 `
 
@@ -179,7 +183,7 @@ const IndexPage = () => (
 
   <ContainerWrapper css={css`padding-top: 90px; text-align: center;`}>
       <H1>Discover Brüner Satellite <br/> Internet Bundles</H1>
-      <p>Jimmy B is here to make the world a better place, one connection at a time.</p>
+      <p css={css`color: white;`}>Jimmy B is here to make the world a better place, one connection at a time.</p>
       <div css={css`margin-top: 50px;`}>
         <Input type='tel' placeholder="Enter Zip" />
         <ZipButton>Connect with the bruner</ZipButton>
@@ -241,22 +245,28 @@ const IndexPage = () => (
 
     <ContainerWrapper largePadding>
         <SideBySide imgSrc='satellite.png' reverse>
-          <H2>We’re Here to Brand Everything, Everywhere, Anytime</H2>
-          <p>Flat screen tv? Wireless divice? Tablet? Laptop? We can put our brand image on all of them. We can do it whenever we want, but mostly you’ll see our logo on your screen when you’re experiencing technical difficulties. This way, you will associate  our brand with some of your most emotional moments. </p>
+          <H3>What is a Brüner?</H3>
+          <p>You might as well ask what salt tastes like or how water feels. Until you’ve interacted with a Brüner first hand, you can only imagine how great you’ll feel. A warm handshake, a compliment, a rubix cube coaching session, or just a chat about your weekend will leave you feeling better about your self and the world in general. </p>
+          <p>Brüner Dynamics is on course to change the world: </p>
+          <ul>
+            <li>98% of Americans have never hung out with Jimmy. That’s about to change. With satellite technology, you can hang with him all day, every day.</li>
+            <li>You’ve probably seen our ambiguous guerilla marketing stickers plasterd at various locations from laptops to street lamps.</li>
+          </ul>
+
         </SideBySide>
       </ContainerWrapper>
 
       <BackgroundColor bgColor={Colors.white3}>
-        <ContainerWrapper textCenter maxWidth="750" largePadding>
-          <H2>Equipment</H2>
-          <p css={css`max-width: 550px; margin: auto; margin-bottom: 30px;`}>When you sign up for Brüner Dynamics, we make it easy to get connected. We’ll send a professional technician named Ralph to install your new dish in an optimal location and set up your wifi router inside your home. </p>
+        <ContainerWrapper textCenter maxWidth="750px" largePadding>
+          <H3>Equipment</H3>
+          <p css={css`max-width: 600px; margin: auto; margin-bottom: 30px;`}>When you sign up for Brüner Dynamics, we make it easy to get connected. We’ll send a professional technician named Ralph to install your new dish in an optimal location and set up your wifi router inside your home. </p>
           <FlexWrap spaceAround>
             <Card>
-              <H3>Brüner Satellite Dish</H3>
+              <H4>Brüner Satellite Dish</H4>
               <p>To access Brüner you’ll need a Brüner Satellite Dish. Jimmy’s cousin Ralph will test for the best installation location and install the dish on your abode. He’ll probably stay for dinner.</p>
             </Card>
             <Card>
-              <H3>Brüner Wi-Fi Modem</H3>
+              <H4>Brüner Wi-Fi Modem</H4>
               <p>The Brüner WiFi Modem gives you wireless internet throughout your home. It also includes a Voice service adapter so we can listen and see if anything cool is happening at your place. </p>
             </Card>
           </FlexWrap>
@@ -264,10 +274,14 @@ const IndexPage = () => (
       </BackgroundColor>
 
 
-      <ContainerWrapper textCenter maxWidth="750" largePaddingFull>
-        <H2>Brüner Dynamics FAQs</H2>
+
+      <ContainerWrapper textCenter maxWidth="650px" largePaddingFull>
+        <H3>Brüner Dynamics FAQs</H3>
         <Accordions />
       </ContainerWrapper>
+
+
+      <Footer />
 
 
   </Layout>

@@ -8,32 +8,32 @@ import BP from './breakpoints'
 const BaseStyles = () => (
   <Global
   styles={css`
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:100,300,400,600&');
   html, body {
     margin: 0px;
     padding: 0;
     font-family: Montserrat, Helvetica Neue, sans-serif;
     box-sizing: border-box;
+    color: ${Colors.dark};
   }
 
 
-  p {
-    font-size: 16px;
-    line-height: 24px;
-  }
 
 
 h1,
 h2,
-h3,
-p {
+h3 {
   padding-bottom: 14px;
   font-weight: 300;
   margin: 0;
+}
 
-  &.padding-bottom {
-    padding-bottom: 30px;
-  }
+p, ul, li, strong {
+  font-family: Raleway;
+  margin: 0;
+  padding-bottom: 14px;
+  font-weight: 400;
+  color: ${Colors.dark};
 }
 
 h1 {
@@ -116,35 +116,12 @@ h6 {
 p {
   font-size: 16px;
   line-height: 24px;
-
-  &.small {
-    font-size: 14px;
-    line-height: 22px;
-
-  }
-
-  &.legal {
-    font-size: 10px;
-    line-height: 12px;
-  }
-
 }
 
 a {
   font-size: 16px;
   line-height: 24px;
   text-decoration: none;
-
-  &.small {
-    font-size: 14px;
-    line-height: 22px;
-
-  }
-
-  &.legal {
-    font-size: 10px;
-    line-height: 12px;
-  }
 
 }
 
