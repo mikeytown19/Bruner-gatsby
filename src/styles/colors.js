@@ -2,17 +2,17 @@ const colors = {
 primary: '#009fe3',
 blue2: '#02b0fb',
 blue3: '#0187c1',
-blue2: '#016691',
+blue4: '#016691',
 
 secondary: '#bed733',
 green2: '#dcf744',
 green3: '#99af21',
-green2: '#6d7e11',
+green4: '#6d7e11',
 
 tertirary: '#202e39',
 gray2: '#384d5e',
 gray3: '#0f1a23',
-gray2: '#070d12',
+gray4: '#070d12',
 lightgray: '#CBCDD1',
 gray: '#8B8F95',
 

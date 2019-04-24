@@ -11,7 +11,6 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
 import BaseStyles from '../styles/base'
 
 export const ContainerWrapper = styled.div`

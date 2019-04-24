@@ -18,6 +18,7 @@ const Image = ({src, data}) => {
     if (node.childImageSharp) {
       return src ===  node.childImageSharp.fluid.originalName
     }
+    return ''
   })
     return (
       <Img fluid={imageSrc.node.childImageSharp.fluid}/>
