@@ -35,8 +35,16 @@ const ContainerWrapper = styled.div`
   position: relative;
   max-width: 960px;
   padding: 1.45rem 1.0875rem;
-  padding: ${props =>
-  props.largePadding ? '50px 0' : '1.45rem 1.0875rem'};
+  padding: ${props => {
+  if(props.largePadding) {
+    return '50px 0'
+  } else if(props.largePaddingFull) {
+    return '50px 25px'
+  }
+  else {
+   return  '1.45rem 1.0875rem'
+  }
+  }};
   text-align:  ${props =>
     props.textCenter ? 'center' : 'initial'};
   max-width: ${props =>
@@ -256,7 +264,7 @@ const IndexPage = () => (
       </BackgroundColor>
 
 
-      <ContainerWrapper textCenter maxWidth="750" largePadding>
+      <ContainerWrapper textCenter maxWidth="750" largePaddingFull>
         <H2>Brüner Dynamics FAQs</H2>
         <Accordions />
       </ContainerWrapper>

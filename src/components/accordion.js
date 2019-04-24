@@ -20,9 +20,49 @@ const Container = styled.div`
   div {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: ${Colors.primary};
     cursor: pointer;
-    padding: 15px;
+    padding: 10px;
+    position: relative;
+
+    button {
+      color: white;
+      background: ${Colors.primary};
+      width: 40px;
+      height: 40px;
+      border: 0;
+      font-size: 1.5em;
+      position: relative;
+      cursor: pointer;
+
+      &:focus {
+           outline:none;
+        }
+
+      span {
+        position: absolute;
+        transition: .3s;
+        background: white;
+        border-radius: 2px;
+
+        &:first-of-type {
+          top: 25%;
+          bottom: 25%;
+          width: 10%;
+          left: 45%;
+        }
+
+        &:last-of-type {
+            left: 25%;
+            right: 25%;
+            height: 10%;
+            top: 45%;
+          }
+
+      }
+    }
+
    }
 
 
@@ -34,6 +74,17 @@ const Container = styled.div`
    &.active {
     p {
       display: flex;
+    }
+
+    button {
+      span {
+        transform: rotate(90deg);
+
+        &:last-of-type {
+          left: 50%;
+          right: 50%;
+        }
+      }
     }
    }
 
@@ -49,7 +100,7 @@ function Accordion() {
     e.currentTarget.classList.toggle('active')
  }
 
-  useEffect((props) => {
+  useEffect(() => {
   }, [opened]);
 
     return (
@@ -62,9 +113,7 @@ function Accordion() {
           }}>
             <div>
             <h5>{item.title}</h5>
-            {!opened ?
-            <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg> :
-             <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="24" height="24" viewBox="0 0 24 24"><path d="M0 10h24v4h-24z"/></svg> }
+            <button><span></span><span></span></button>
             </div>
             <p opened={opened}>{item.answer}</p>
           </Container>

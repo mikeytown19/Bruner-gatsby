@@ -7,7 +7,7 @@ const WaveContainer = styled.div`
   div {
     position: absolute;
     width: 100%;
-    top: -50px;
+    top: -60px;
 
     svg {
       fill: white;
