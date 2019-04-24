@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import FaqData from '../data/faq'
 import Colors from '../styles/colors'
@@ -32,24 +32,22 @@ const Container = styled.div`
 
 
 `
-const Plus = <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
 
-const Minus = <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="24" height="24" viewBox="0 0 24 24"><path d="M0 10h24v4h-24z"/></svg>;
+function Accordion() {
+  const [opened, toggleOpened] = useState(0);
 
-class Accordion extends React.Component {
-  state = {
-    opened: false
-  }
-  render() {
+  useEffect(() => {
+
+  })
 
     return (
       FaqData.map((item, index) => {
-        console.log(Minus.props)
+        console.log(opened)
         return (
-          <Container key={index}>
+          <Container key={index} onClick={()=> toggleOpened(opened + 1)}>
             <div>
             <h5>{item.title}</h5>
-            {!this.state.opened ?
+            {!opened ?
             <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg> :
              <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="24" height="24" viewBox="0 0 24 24"><path d="M0 10h24v4h-24z"/></svg> }
             </div>
@@ -58,7 +56,7 @@ class Accordion extends React.Component {
         )
       })
     )
-  }
+
 
 }
 

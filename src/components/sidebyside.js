@@ -23,7 +23,7 @@ flex-wrap: wrap;
 
 
 const SideBySide = ({children, imgSrc, reverse}) => {
-  console.log(reverse);
+
   return (
     <StyleContinaer reverse={reverse}>
       <ImageContainer>
