@@ -105,8 +105,9 @@ const BorderLeftBox = styled.div`
   min-width: 250px;
 
 
-  h3 {
+  h4 {
     color: ${Colors.primary};
+    margin-bottom: 10px;
   }
 
 `
@@ -215,20 +216,20 @@ const IndexPage = () => (
       </ContainerWrapper>
    </BackgroundColor>
 
-    <ContainerWrapper css={css`padding-bottom: 50px;`}>
-      <H2 css={css`text-align: center;`}>It Is Possible to Pay Us More <br /> Money</H2>
+    <ContainerWrapper largePadding>
+      <H3 css={css`text-align: center; margin-bottom: 20px;`}>It Is Possible to Pay Us More Money</H3>
       <FlexWrap>
         <BorderLeftBox>
-          <H3>Easy Care</H3>
+          <H4>Easy Care</H4>
           <p>For only $5.99/mo, you can get priority customer support with annual dish relocation, free service calls, and a priority hotline which connects straight to Jimmy’s Pager – faster than a Led Zeppelin guitar solo.  Plus, you can add or cancel Easy Care at anytime. </p>
         </BorderLeftBox>
         <BorderLeftBox>
-          <H3>Voice</H3>
+          <H4>Voice</H4>
           <p>The industry term for digital phone service is VoIP. We want to mention VoIP here a few times so that we sound legit and you will forefit your dollars to us. Voice is the only VoIP connection that doesn’t subtract from your internet data allowing more time for Strongbad emails and Battlestar Galactica chat rooms.</p>
 
         </BorderLeftBox>
         <BorderLeftBox>
-          <H3>DIRECTV</H3>
+          <H4>DIRECTV</H4>
           <p>If you can get Brüner at your home, you can get DIRECTV and vice versa. If you can get water in your home, you can quench your thirst and take baths. There is a hypothetical situation where you can take a bath, stream patriotic tunes, watch DIRECTV, and quench your thirst all at the same time.  </p>
         </BorderLeftBox>
       </FlexWrap>
