@@ -181,7 +181,7 @@ const SkyContainer = styled.div`
     box-sizing: border-box;
   }
 
-
+  background: linear-gradient(125deg, #00103a 0%, #3e5f77 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -205,7 +205,8 @@ const SkyContainer = styled.div`
   .sky-container {
   width: 100%;
   height: 100%;
-  background: linear-gradient(125deg, #00103a 0%, #3e5f77 100%);
+  transform: rotate(-15deg);
+
 
 }
 
