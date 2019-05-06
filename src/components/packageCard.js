@@ -32,6 +32,10 @@ const PackageCard = styled.div`
   transition: .2s;
   border-right: solid ${Colors.lightgray} 1px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 340px;
+  justify-content: space-between;
 
 
   &:nth-of-type(4) {
@@ -40,7 +44,6 @@ const PackageCard = styled.div`
 
   &:hover {
     /* color: ${Colors.primary}; */
-
     box-shadow: 0px 0px 11px -3px grey;
     border: solid transparent 1px;
 
@@ -65,24 +68,27 @@ const PriceContainer = styled.div`
 const PriceCents = styled.p`
         font-size: 18px;
         top: 7px;
-        margin-top: 7px;
+        margin-top: 16px;
 `
 
 const PriceSlash = styled.p`
     font-weight: 100;
     font-size: 24px;
     right: 0;
-    margin-top: 8px;
+    margin-top: 16px;
 `
 
 const PriceMo = styled.p`
     font-size: 18px;
+    margin-top: 16px;
 `
 
 const PriceDisc = styled.p`
           color: ${Colors.gray};
           font-size: 12px;
-          margin-top: -10px;`
+          margin-top: -15px;
+          padding-bottom: 2px;
+    `
 
 const Flex = styled.div`
   display: flex;
@@ -95,6 +101,8 @@ const FlexWrap = styled.div`
 
 const CardText = styled.p`
                margin-bottom: 0;
+               padding-bottom: 0;
+
                font-size: 14px;
 `
 
@@ -102,6 +110,10 @@ const CardSubText = styled.p`
             margin-top: 0;
             color: ${Colors.gray};
             font-size: 10px;
+            margin-bottom: 5px;
+            padding-bottom: 0;
+            line-height: 14px;
+
 `
 
 const PackageCards = () => (
@@ -111,8 +123,8 @@ const PackageCards = () => (
       const {name, price, priceCents,  priceDisc,  details } = item;
       return (
       <PackageCard color="teal" key={index}>
-
-        <Name>
+      <div>
+      <Name>
           {name}
         </Name>
         <PriceContainer>
@@ -138,6 +150,9 @@ const PackageCards = () => (
             </div>
           )
         })}
+      </div>
+
+
 
         <PackageButton>
         <span>Order the {name}</span>

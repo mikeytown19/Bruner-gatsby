@@ -87,7 +87,7 @@ const Input = styled.input`
 
 const ZipButton = styled.button`
             border: none;
-            height: 47px;
+            height: 45px;
             background-color: #009fe3;
             border-radius: 0px 5px 5px 0px;
             color: white;

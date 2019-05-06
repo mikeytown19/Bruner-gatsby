@@ -80,7 +80,7 @@ const PackageData = [
     {
       "name": "Cult Hero Classic",
       "price":"100",
-      "priceCents": "00",
+      "priceCents":"00",
       "priceDisc":"-$1/mo after you demonstrate loyalty",
       "feature":null,
       "details": [
