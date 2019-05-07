@@ -3,6 +3,7 @@ import PackageData from '../data/packages.js'
 import styled from '@emotion/styled'
 import { css } from "@emotion/core"
 import Colors from '../styles/colors'
+import Bp from '../styles/breakpoints'
 
 const Name = styled.p`
       font-size: 12px;
@@ -27,8 +28,6 @@ const PackageCard = styled.div`
   flex: 1;
   margin: 1px;
   padding: 10px;
-  min-width: 200px;
-  max-width: 350px;
   transition: .2s;
   border-right: solid ${Colors.lightgray} 1px;
   box-sizing: border-box;
@@ -36,6 +35,7 @@ const PackageCard = styled.div`
   flex-direction: column;
   height: 340px;
   justify-content: space-between;
+  width: 100%;
 
 
   &:nth-of-type(4) {
@@ -93,9 +93,19 @@ const PriceDisc = styled.p`
 const Flex = styled.div`
   display: flex;
 `
-const FlexWrap = styled.div`
-    display: flex;
-    flex-wrap: wrap;
+const Grid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    ${Bp.medium} {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    ${Bp.small} {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
 `
 
 
@@ -117,7 +127,7 @@ const CardSubText = styled.p`
 `
 
 const PackageCards = () => (
-  <FlexWrap>
+  <Grid>
     {PackageData.map((item, index) => {
 
       const {name, price, priceCents,  priceDisc,  details } = item;
@@ -163,7 +173,7 @@ const PackageCards = () => (
       </PackageCard>
       )
     })}
-  </FlexWrap>
+  </Grid>
 );
 
 
