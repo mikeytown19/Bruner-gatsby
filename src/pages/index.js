@@ -22,6 +22,11 @@ const FlexWrap = styled.div`
     props.spaceAround ? 'space-around' : 'initial'};
 `
 
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(318px, 1fr));
+`
+
 const LegalStyleContainer = styled.div`
   margin-top: 50px;
   margin-bottom: 20px;
@@ -105,6 +110,14 @@ const BorderLeftBox = styled.div`
   flex: 1;
   min-width: 250px;
 
+  ${Bp.medium} {
+    border: none;
+
+    h4 {
+      border-bottom: ${Colors.primary} solid 2px;
+    }
+  }
+
 
   h4 {
     color: ${Colors.primary};
@@ -180,7 +193,6 @@ const SkyContainer = styled.div`
   * {
     box-sizing: border-box;
   }
-
   background: linear-gradient(125deg, #00103a 0%, #3e5f77 100%);
   display: flex;
   align-items: center;
@@ -386,7 +398,7 @@ const IndexPage = () => (
 
     <ContainerWrapper largePadding>
       <H3 css={css`text-align: center; margin-bottom: 20px;`}>It Is Possible to Pay Us More Money</H3>
-      <FlexWrap>
+      <Grid>
         <BorderLeftBox>
           <H4>Easy Care</H4>
           <p>For only $5.99/mo, you can get priority customer support with annual dish relocation, free service calls, and a priority hotline which connects straight to Jimmy’s Pager – faster than a Led Zeppelin guitar solo.  Plus, you can add or cancel Easy Care at anytime. </p>
@@ -400,7 +412,7 @@ const IndexPage = () => (
           <H4>DIRECTV</H4>
           <p>If you can get Brüner at your home, you can get DIRECTV and vice versa. If you can get water in your home, you can quench your thirst and take baths. There is a hypothetical situation where you can take a bath, stream patriotic tunes, watch DIRECTV, and quench your thirst all at the same time.  </p>
         </BorderLeftBox>
-      </FlexWrap>
+      </Grid>
 
     </ContainerWrapper>
 

@@ -7,6 +7,7 @@ import Logo from '../images/bruner-logo.svg'
 import LogoColor from '../images/bruner-logo-color.svg'
 
 import NavigationData from '../data/navigation'
+import Bp from '../styles/breakpoints'
 
 
 const ContainerWrapper = styled.div`
@@ -21,6 +22,14 @@ const Flex = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`
+
+const NavLinkStyles = styled.div`
+  margin-left: 30px;
+
+  ${Bp.medium} {
+    display: block;
+  }
 `
 
 class Header extends React.Component {
@@ -63,13 +72,14 @@ class Header extends React.Component {
         &:hover {
           color: #009FE3;
         }
+
+        ${Bp.medium} {
+          display: inherit;
+        }
       `
 
         const NavLinks = props => (
-          <div
-          css={css`
-            margin-left: 30px;
-          `}>
+          <NavLinkStyles>
           {NavigationData.map((item, index) => {
             return (
               <NavLink
@@ -79,7 +89,7 @@ class Header extends React.Component {
               </NavLink>
             )
           })}
-          </div>
+          </NavLinkStyles>
         )
     return (
       <header css={css`
@@ -105,6 +115,9 @@ class Header extends React.Component {
 
           <NavLink
             css={css`
+            ${Bp.medium} {
+              display: none;
+            }
             font-size: 24px;`}
           to="/">Call Now 1.888.888.8888</NavLink>
         </Flex>
