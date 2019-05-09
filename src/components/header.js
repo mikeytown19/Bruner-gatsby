@@ -23,7 +23,6 @@ const Flex = styled.div`
   justify-content: space-between;
   align-items: center;
 `
-
 const NavLinkStyles = styled.div`
   margin-left: 30px;
 
@@ -32,9 +31,60 @@ const NavLinkStyles = styled.div`
   }
 `
 
+const FlexMobile = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ${Bp.medium} {
+    width: 100%;
+    justify-content: space-between;
+    ${NavLinkStyles} {
+      display: none;
+    }
+  }
+`
+
+const HamburgerStyles = styled.div`
+  display: none;
+  ${Bp.medium} {
+    display: block;
+    cursor: pointer;
+
+    .bar1, .bar2, .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: white;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+
+    .change .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+      transform: rotate(-45deg) translate(-9px, 6px);
+    }
+    .change .bar2 {opacity: 0;}
+    .change .bar3 {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-8px, -8px);
+    }
+  }
+`
+
+const Hamburger = () => (
+  <HamburgerStyles>
+  <div className="bar1"></div>
+  <div className="bar2"></div>
+  <div className="bar3"></div>
+
+  </HamburgerStyles>
+)
+
+
 class Header extends React.Component {
   state = {
-    scrolled: false
+    scrolled: false,
+    clicked: false,
   }
 
   componentDidMount() {
@@ -43,6 +93,12 @@ class Header extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.listenToScroll)
+  }
+
+
+   handleClick = ({target}) => {
+    console.log('clicked', target);
+    target.classList.add('change')
   }
 
   listenToScroll = () => {
@@ -60,9 +116,12 @@ class Header extends React.Component {
   }
 
 
+
   render() {
     let bgColor =  this.state.scrolled ? 'white' : 'transperant';
     let navColor =  this.state.scrolled ? '#009FE3' : 'white';
+
+
     const NavLink = styled(Link)`
       margin-left: 15px;
         color: ${navColor};
@@ -104,14 +163,18 @@ class Header extends React.Component {
       `}>
       <ContainerWrapper>
         <Flex>
-          <Flex>
+          <FlexMobile>
             <Link to="/">
             <img src={this.state.scrolled ? LogoColor : Logo} alt="Main logo" />
             </Link>
 
             <NavLinks/>
+              <div onClick={(e) => {this.handleClick(e) }}>
+            <Hamburger />
+            </div>
 
-          </Flex>
+          </FlexMobile>
+
 
           <NavLink
             css={css`

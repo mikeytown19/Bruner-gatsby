@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from '@emotion/styled'
-import SpaceImage from '../images/stars.jpg'
 import { css } from '@emotion/core'
 import PackageCards from '../components/packageCard'
 import legalData from '../data/legal'
@@ -72,15 +71,6 @@ const H3 = styled.h3`
 
 const H4 = styled.h4`
   font-weight: 300;
-`
-
-const Background = styled.div`
-     background-image: url(${SpaceImage});
-     background-size: cover;
-     background-repeat: no-repeat;
-     min-height: 500px;
-     position: relative;
-     color: white;
 `
 
 const Input = styled.input`
@@ -256,48 +246,48 @@ const SkyContainer = styled.div`
   transform: translateX(50%) rotateZ(-45deg);
 }
 
-.star:nth-child(1) {
+.star:nth-of-type(1) {
   top: calc(50% - 100px);
   left: calc(25% - 250px);
   animation-delay: 650ms;
 }
-.star:nth-child(1)::before, .star:nth-child(1)::after {
+.star:nth-of-type(1)::before, .star:nth-of-type(1)::after {
   animation-delay: 650ms;
 }
 
-.star:nth-child(2) {
+.star:nth-of-type(2) {
   top: calc(50% + 50px);
   left: calc(50% - 800px);
   animation-delay: 150ms;
 }
-.star:nth-child(2)::before, .star:nth-child(2)::after {
+.star:nth-of-type(2)::before, .star:nth-of-type(2)::after {
   animation-delay: 150ms;
 }
 
-.star:nth-child(3) {
+.star:nth-of-type(3) {
   top: calc(50%  + 20px);
   left: calc(50% + 200px);
   animation-delay: 1600ms;
 }
-.star:nth-child(3)::before, .star:nth-child(3)::after {
+.star:nth-of-type(3)::before, .star:nth-of-type(3)::after {
   animation-delay: 1600ms;
 }
 
-.star:nth-child(4) {
+.star:nth-of-type(4) {
   top: calc(65% - 50px);
   left: calc(50% - 250px);
   animation-delay: 4700ms;
 }
-.star:nth-child(4)::before, .star:nth-child(4)::after {
+.star:nth-of-type(4)::before, .star:nth-of-type(4)::after {
   animation-delay: 4700ms;
 }
 
-.star:nth-child(5) {
+.star:nth-of-type(5) {
   top: calc(50% - -190px);
   left: calc(50% + 400px);
   animation-delay: 2100ms;
 }
-.star:nth-child(5)::before, .star:nth-child(5)::after {
+.star:nth-of-type(5)::before, .star:nth-of-type(5)::after {
   animation-delay: 2100ms;
 }
 
