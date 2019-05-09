@@ -21,7 +21,7 @@ display: flex;
 flex-wrap: wrap;
   div {
     flex: 1;
-    min-width: 400px;
+    min-width: 200px;
 
   }
   flex-direction: ${props =>

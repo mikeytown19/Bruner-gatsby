@@ -42,12 +42,12 @@ h1 {
   line-height: 62px;
 
   ${BP.medium} {
-    font-size: 50px;
+    font-size: 44px;
     line-height: 52px;
   }
 
   ${BP.small} {
-    font-size: 40px;
+    font-size: 34px;
     line-height: 42px;
   }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import Bp from '../styles/breakpoints'
 
 const WaveContainer = styled.div`
   position: relative;
@@ -8,6 +9,10 @@ const WaveContainer = styled.div`
     position: absolute;
     width: 100%;
     top: -60px;
+
+    ${Bp.small} {
+      top: -20px;
+    }
 
     svg {
       fill: white;

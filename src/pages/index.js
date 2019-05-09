@@ -172,6 +172,24 @@ const CardContainer = styled.div`
   }
 `
 
+const ZipCheck = styled.div`
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+
+ ${Bp.small} {
+    input {
+      width: 125px;
+    }
+
+    button {
+      font-size: 13px;
+    }
+ }
+
+
+`
+
 const Card = ({children}) =>  (
     <CardContainer>
       {children}
@@ -199,7 +217,7 @@ const SkyContainer = styled.div`
     text-align: center;
 
     ${Bp.medium} {
-      padding-top: 75px;
+      padding-top: 15px;
     }
   }
 
@@ -358,10 +376,10 @@ const IndexPage = () => (
         <ContainerWrapper>
             <H1>Discover Brüner Satellite <br/> Internet Bundles</H1>
             <p css={css`color: white;`}>Jimmy B is here to make the world a better place, one connection at a time.</p>
-            <div css={css`margin-top: 50px;`}>
+            <ZipCheck>
               <Input type='tel' placeholder="Enter Zip" />
               <ZipButton>Connect with the bruner</ZipButton>
-            </div>
+            </ZipCheck>
 
         </ContainerWrapper>
     </StarBackground>

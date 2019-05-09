@@ -17,6 +17,7 @@ const ContainerWrapper = styled.div`
   top: 0;
   z-index: 10;
   width: 100%;
+  position: relative;
 `
 const Flex = styled.div`
   display: flex;
@@ -39,9 +40,33 @@ const FlexMobile = styled.div`
   ${Bp.medium} {
     width: 100%;
     justify-content: space-between;
+    transition: all linear .2s;
+
     ${NavLinkStyles} {
       display: none;
+      &.active {
+      margin-top: 15px;
+      position: fixed;
+      display: block;
+      right: 0;
+      top: 60px;
+      width: 100%;
+      text-align: right;
+      padding: 14px;
+      background: linear-gradient(125deg, #00103a 0%, #3e5f77 100%);
+
+        a {
+          color: white;
+          margin: 10px 0;
+
+          &:hover {
+            color: #5f91ff;
+          }
+        }
+      }
     }
+
+
   }
 `
 
@@ -54,41 +79,45 @@ const HamburgerStyles = styled.div`
     .bar1, .bar2, .bar3 {
       width: 35px;
       height: 5px;
-      background-color: white;
+      background-color:  ${props =>
+      props.scrolled ? '#3e5f77' : 'white'};
       margin: 6px 0;
       transition: 0.4s;
     }
 
-    .change .bar1 {
+    &.change .bar1 {
       -webkit-transform: rotate(-45deg) translate(-9px, 6px);
       transform: rotate(-45deg) translate(-9px, 6px);
     }
-    .change .bar2 {opacity: 0;}
-    .change .bar3 {
+    &.change .bar2 {opacity: 0;}
+    &.change .bar3 {
       -webkit-transform: rotate(45deg) translate(-8px, -8px);
       transform: rotate(45deg) translate(-8px, -8px);
     }
   }
 `
 
-const Hamburger = () => (
-  <HamburgerStyles>
-  <div className="bar1"></div>
-  <div className="bar2"></div>
-  <div className="bar3"></div>
+const HeaderStyles = styled.header`
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      height: 80px;
+      z-index: 11;
+      transition: .51s;
+      background-color: ${props =>
+      props.scrolled ? 'white' : 'transparent'};
+`
 
-  </HamburgerStyles>
-)
 
 
 class Header extends React.Component {
   state = {
     scrolled: false,
-    clicked: false,
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.listenToScroll)
+    window.addEventListener('scroll', this.listenToScroll);
   }
 
   componentWillUnmount() {
@@ -96,9 +125,10 @@ class Header extends React.Component {
   }
 
 
-   handleClick = ({target}) => {
-    console.log('clicked', target);
-    target.classList.add('change')
+   handleClick = e => {
+    e.preventDefault()
+    e.currentTarget.classList.toggle('change')
+    document.querySelector('.navLinks').classList.toggle('active');
   }
 
   listenToScroll = () => {
@@ -118,7 +148,6 @@ class Header extends React.Component {
 
 
   render() {
-    let bgColor =  this.state.scrolled ? 'white' : 'transperant';
     let navColor =  this.state.scrolled ? '#009FE3' : 'white';
 
 
@@ -138,7 +167,7 @@ class Header extends React.Component {
       `
 
         const NavLinks = props => (
-          <NavLinkStyles>
+          <NavLinkStyles className="navLinks">
           {NavigationData.map((item, index) => {
             return (
               <NavLink
@@ -151,27 +180,22 @@ class Header extends React.Component {
           </NavLinkStyles>
         )
     return (
-      <header css={css`
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      position: fixed;
-      height: 80px;
-      z-index: 11;
-      transition: .51s;
-      background-color: ${bgColor};
-      `}>
+      <HeaderStyles scrolled={this.state.scrolled}>
       <ContainerWrapper>
         <Flex>
           <FlexMobile>
             <Link to="/">
             <img src={this.state.scrolled ? LogoColor : Logo} alt="Main logo" />
             </Link>
-
             <NavLinks/>
-              <div onClick={(e) => {this.handleClick(e) }}>
-            <Hamburger />
-            </div>
+
+            <HamburgerStyles
+             onClick={(e)=>this.handleClick(e)}
+             scrolled={this.state.scrolled}>
+              <div className="bar1"></div>
+              <div className="bar2"></div>
+              <div className="bar3"></div>
+            </HamburgerStyles>
 
           </FlexMobile>
 
@@ -185,7 +209,7 @@ class Header extends React.Component {
           to="/">Call Now 1.888.888.8888</NavLink>
         </Flex>
       </ContainerWrapper>
-    </header>
+    </HeaderStyles>
     );
   }
 }
