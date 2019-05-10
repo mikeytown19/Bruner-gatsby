@@ -25,8 +25,8 @@ const PackageButton = styled.div`
 `
 
 const PackageCard = styled.div`
-  flex: 1;
-  margin: 1px;
+
+  margin: 1px 0px;
   padding: 10px;
   transition: .2s;
   border-right: solid ${Colors.lightgray} 1px;

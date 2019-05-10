@@ -117,13 +117,16 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
+    console.log(window.scrollY)
     window.addEventListener('scroll', this.listenToScroll);
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.listenToScroll)
-  }
+  componentDidUpdate() {
+    if(window.scrollY === 21) {
+      this.listenToScroll();
+    }
 
+  }
 
    handleClick = e => {
     e.preventDefault()
@@ -131,16 +134,15 @@ class Header extends React.Component {
     document.querySelector('.navLinks').classList.toggle('active');
   }
 
-  listenToScroll = () => {
+  listenToScroll = (e) => {
+
    let scrolled = window.scrollY;
 
     scrolled > 20 ?
     this.setState({
-      theposition: scrolled,
       scrolled: true
     }) :
     this.setState({
-      theposition: scrolled,
       scrolled: false
     })
   }
@@ -180,7 +182,9 @@ class Header extends React.Component {
           </NavLinkStyles>
         )
     return (
-      <HeaderStyles scrolled={this.state.scrolled}>
+      <HeaderStyles scrolled={this.state.scrolled} onScroll={() =>{
+        console.log('scrolled')
+      }}>
       <ContainerWrapper>
         <Flex>
           <FlexMobile>

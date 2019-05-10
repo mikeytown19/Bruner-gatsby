@@ -14,6 +14,10 @@ const WaveContainer = styled.div`
       top: -20px;
     }
 
+    ${Bp.medium} {
+      top: -35px;
+    }
+
     svg {
       fill: white;
     }
