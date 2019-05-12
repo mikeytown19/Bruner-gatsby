@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
+import Layout from '../components/layout'
 
 const Container = styled.div`
   margin: 3rem auto;
@@ -52,13 +53,10 @@ const underline = css`
 `
 
 const User = props => (
-  <UserWrapper>
-    <Avatar src={props.avatar} alt="" />
-    <Description>
-      <Username>{props.username}</Username>
-      <Excerpt>{props.excerpt}</Excerpt>
-    </Description>
-  </UserWrapper>
+  <Layout>
+
+
+  </Layout>
 )
 
 export default () => (

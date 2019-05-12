@@ -10,12 +10,13 @@ const WaveContainer = styled.div`
     width: 100%;
     top: -60px;
 
-    ${Bp.small} {
-      top: -20px;
-    }
 
     ${Bp.medium} {
-      top: -35px;
+      top: -30px;
+    }
+
+    ${Bp.small} {
+      top: -20px;
     }
 
     svg {

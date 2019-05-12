@@ -37,37 +37,6 @@ const FlexMobile = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  ${Bp.medium} {
-    width: 100%;
-    justify-content: space-between;
-    transition: all linear .2s;
-
-    ${NavLinkStyles} {
-      display: none;
-      &.active {
-      margin-top: 15px;
-      position: fixed;
-      display: block;
-      right: 0;
-      top: 60px;
-      width: 100%;
-      text-align: right;
-      padding: 14px;
-      background: linear-gradient(125deg, #00103a 0%, #3e5f77 100%);
-
-        a {
-          color: white;
-          margin: 10px 0;
-
-          &:hover {
-            color: #5f91ff;
-          }
-        }
-      }
-    }
-
-
-  }
 `
 
 const HamburgerStyles = styled.div`
@@ -107,6 +76,45 @@ const HeaderStyles = styled.header`
       transition: .51s;
       background-color: ${props =>
       props.scrolled ? 'white' : 'transparent'};
+
+      &.active {
+        ${NavLinkStyles} {
+          margin-top: 15px;
+          position: fixed;
+          display: block;
+          right: 0;
+          top: 60px;
+          width: 100%;
+          text-align: right;
+          padding: 14px;
+          background: linear-gradient(125deg, #00103a 0%, #3e5f77 100%);
+
+            a {
+              color: white;
+              margin: 10px 0;
+
+              &:hover {
+                color: #5f91ff;
+              }
+            }
+          }
+      }
+
+      ${Bp.medium} {
+        ${FlexMobile} {
+          width: 100%;
+          justify-content: space-between;
+          transition: all linear .2s;
+        }
+
+        ${NavLinkStyles} {
+          display: none;
+         }
+      }
+
+
+
+
 `
 
 
@@ -114,6 +122,7 @@ const HeaderStyles = styled.header`
 class Header extends React.Component {
   state = {
     scrolled: false,
+    clicked: false
   }
 
   componentDidMount() {
@@ -125,13 +134,24 @@ class Header extends React.Component {
     if(window.scrollY === 21) {
       this.listenToScroll();
     }
-
+    console.log(this.state.clicked);
   }
 
    handleClick = e => {
     e.preventDefault()
     e.currentTarget.classList.toggle('change')
     document.querySelector('.navLinks').classList.toggle('active');
+    if (this.state.clicked) {
+      this.setState({
+        clicked: false,
+      })
+    } else {
+      this.setState({
+        clicked: true,
+      })
+
+    }
+
   }
 
   listenToScroll = (e) => {
@@ -182,9 +202,7 @@ class Header extends React.Component {
           </NavLinkStyles>
         )
     return (
-      <HeaderStyles scrolled={this.state.scrolled} onScroll={() =>{
-        console.log('scrolled')
-      }}>
+      <HeaderStyles scrolled={this.state.scrolled} className={this.state.clicked ? "active" : ''}>
       <ContainerWrapper>
         <Flex>
           <FlexMobile>
