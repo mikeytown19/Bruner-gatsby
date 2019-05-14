@@ -29,6 +29,10 @@ flex-wrap: wrap;
   ${Bp.medium} {
     flex-wrap: wrap;
   }
+
+  ${Bp.small} {
+    flex-direction: column;
+  }
 `
 
 

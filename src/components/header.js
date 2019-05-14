@@ -126,7 +126,6 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
-    console.log(window.scrollY)
     window.addEventListener('scroll', this.listenToScroll);
   }
 
@@ -134,7 +133,6 @@ class Header extends React.Component {
     if(window.scrollY === 21) {
       this.listenToScroll();
     }
-    console.log(this.state.clicked);
   }
 
    handleClick = e => {
