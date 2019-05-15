@@ -53,7 +53,7 @@ const PackageData = [
 
     },
     {
-      "name": "ST. Jimmy’s Special",
+      "name": "Become Enlightened",
       "price":"70",
       "priceCents": "00",
       "priceDisc":"$11/mo after you’ve proven worthy",

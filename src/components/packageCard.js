@@ -22,6 +22,8 @@ const PackageButton = styled.div`
           color: white;
         }
         transition: background-color .2s;
+
+
 `
 
 const PackageCard = styled.div`
@@ -165,7 +167,7 @@ const PackageCards = () => (
 
 
         <PackageButton>
-        <span>Order the {name}</span>
+        <span>{name}</span> <br/>
         <span>1.888.888.8888</span>
         </PackageButton>
 

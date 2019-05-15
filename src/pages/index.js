@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from 'react'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from '@emotion/styled'
@@ -368,7 +368,22 @@ const StarBackground = ({children}) => (
 
 
 
-const IndexPage = () => (
+function IndexPage() {
+  const [form, setValues] = useState({input: ''});
+
+  const updateField = e => {
+    console.log(form.input.length);
+    if(form.input.length < 5 ) {
+
+      setValues({
+        ...form,
+        [e.target.name]: e.target.value
+      });
+      }
+
+    };
+
+  return (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <StarBackground>
@@ -377,7 +392,14 @@ const IndexPage = () => (
             <H1>Discover Brüner Satellite <br/> Internet Bundles</H1>
             <p css={css`color: white;`}>Jimmy B is here to make the world a better place, one connection at a time.</p>
             <ZipCheck>
-              <Input type='tel' placeholder="Enter Zip" />
+              <Input
+               type='number'
+               pattern='[0-9]{0,5}'
+               placeholder="Enter Zip"
+               value={form.input}
+               name='input'
+               onChange={updateField}
+               />
               <ZipButton>Connect with the bruner</ZipButton>
             </ZipCheck>
 
@@ -474,6 +496,7 @@ const IndexPage = () => (
 
 
   </Layout>
-)
+  )
+}
 
 export default IndexPage
