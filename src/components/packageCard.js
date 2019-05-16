@@ -38,6 +38,89 @@ const PackageCard = styled.div`
   height: 340px;
   justify-content: space-between;
   width: 100%;
+  position: relative;
+
+  .seeMore {
+    display: none;
+  }
+
+  ${Bp.small} {
+    height: auto;
+    .details {
+     display: none;
+    }
+
+    .seeMore {
+      display: block;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+    color: ${Colors.primary};
+
+    button {
+      color: ${Colors.primary};
+      background: white;
+      width: 40px;
+      height: 40px;
+      border: 0;
+      font-size: 1.5em;
+      position: relative;
+      cursor: pointer;
+
+      &:focus {
+           outline:none;
+        }
+
+      span {
+        position: absolute;
+        transition: .3s;
+        background: white;
+        border-radius: 2px;
+
+        &:first-of-type {
+          top: 25%;
+          bottom: 25%;
+          width: 10%;
+          left: 45%;
+          background-color: ${Colors.primary};
+        }
+
+        &:last-of-type {
+            left: 25%;
+            right: 25%;
+            height: 10%;
+            top: 45%;
+            background-color: ${Colors.primary};
+          }
+
+      }
+    }
+    }
+  }
+
+  &.active {
+    ${Bp.small} {
+    height: auto;
+    .details {
+     display: initial;
+
+    }
+
+    button {
+      span {
+        transform: rotate(90deg);
+
+        &:last-of-type {
+          left: 50%;
+          right: 50%;
+        }
+      }
+    }
+  }
+  }
+
+
 
 
   &:nth-of-type(4) {
@@ -45,9 +128,7 @@ const PackageCard = styled.div`
   }
 
   &:hover {
-    /* color: ${Colors.primary}; */
     box-shadow: 0px 0px 11px -3px grey;
-    border: solid transparent 1px;
 
     ${Name} {
       color: ${Colors.secondary};
@@ -57,7 +138,24 @@ const PackageCard = styled.div`
       background-color: ${Colors.secondary};
     }
 
+    .seeMore {
+      span {
+        &:first-of-type {
+          background-color: ${Colors.secondary};
+        }
+
+        &:last-of-type {
+            background-color: ${Colors.secondary};
+          }
+
+      }
+    }
+
+
+
   }
+
+
 `
 const PriceContainer = styled.div`
     font-size: 36px;
@@ -128,13 +226,21 @@ const CardSubText = styled.p`
 
 `
 
-const PackageCards = () => (
+function PackageCards() {
+  const handleClick = (e) => {
+      e.currentTarget.classList.toggle('active')
+   }
+
+  return (
   <Grid>
     {PackageData.map((item, index) => {
 
       const {name, price, priceCents,  priceDisc,  details } = item;
       return (
-      <PackageCard color="teal" key={index}>
+      <PackageCard color="teal"
+       key={index} onClick={(e)=> {
+        handleClick(e);
+      }}>
       <div>
       <Name>
           {name}
@@ -146,10 +252,12 @@ const PackageCards = () => (
           <PriceMo>mo</PriceMo>
         </PriceContainer>
         <PriceDisc>{priceDisc}</PriceDisc>
+        <div className='details'>
+
         {Object.values(details).map((a, indx) => {
           let {icon, text, subText} = a;
           return (
-          <div key={indx}>
+          <div className="poop" key={indx}>
               <Flex>
                 <img src={icon} alt=''/>
                 <Flex css={css`flex-direction: column; margin-left: 8px;`}>
@@ -162,6 +270,9 @@ const PackageCards = () => (
             </div>
           )
         })}
+
+        </div>
+
       </div>
 
 
@@ -171,12 +282,17 @@ const PackageCards = () => (
         <span>1.888.888.8888</span>
         </PackageButton>
 
+        <div className='seeMore'>
+        <button><span></span><span></span></button>
+        </div>
+
 
       </PackageCard>
       )
     })}
   </Grid>
-);
+  )
+}
 
 
 export default PackageCards;
